@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atena ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffd1ff,#c2e9fb);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    width:600px;
+    max-width:90%;
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.emoji{
+    font-size:90px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-12px);}
+}
+
+h1{
+    font-size:52px;
+    color:#ff2d6f;
+    margin:15px 0;
+}
+
+p{
+    font-size:30px;
+    color:#333;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.buttons{
+    position:relative;
+    height:180px;
+}
+
+button{
+    border:none;
+    padding:15px 35px;
+    font-size:22px;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+#yes{
+    background:#ff2d6f;
+    color:white;
+    box-shadow:0 0 20px rgba(255,45,111,.5);
+}
+
+#no{
+    background:#555;
+    color:white;
+    position:absolute;
+    left:300px;
+}
+
+.final{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background:rgba(255,255,255,.95);
+    z-index:1000;
+}
+
+.final h2{
+    font-size:70px;
+    color:#ff2d6f;
+    margin-bottom:20px;
+}
+
+.final p{
+    font-size:42px;
+    color:#ff2d6f;
+    font-weight:bold;
+}
+
+.heart{
+    position:fixed;
+    font-size:30px;
+    pointer-events:none;
+    animation:fly 5s linear forwards;
+}
+
+@keyframes fly{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(720deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="emoji">🥺❤️</div>
+
+<h1>Atena ❤️</h1>
+
+<p>
+Do You Love Me? 🥺💕
+</p>
+
+<div class="buttons">
+    <button id="yes">YES ❤️</button>
+    <button id="no">NO 🙈</button>
+</div>
+
+</div>
+
+<div class="final" id="final">
+
+<h2>❤️ ATENA ❤️</h2>
+
+<p>
+I Love You Too ❤️🥰
+</p>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+let scale = 1;
+
+function moveNo(){
+
+    const x = Math.random() * (window.innerWidth - 150);
+    const y = Math.random() * (window.innerHeight - 80);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    scale += 0.15;
+    yesBtn.style.transform = `scale(${scale})`;
+}
+
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("click", moveNo);
+
+yesBtn.addEventListener("click", ()=>{
+
+    document.title = "Atena ❤️";
+
+    document.querySelector(".card").style.display="none";
+    document.getElementById("final").style.display="flex";
+
+    setInterval(()=>{
+
+        const heart=document.createElement("div");
+
+        heart.className="heart";
+
+        const emojis=["❤️","💖","💕","💘","💝","🥰"];
+
+        heart.innerHTML=
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+        heart.style.left=Math.random()*window.innerWidth+"px";
+        heart.style.bottom="-50px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },5000);
+
+    },80);
+
+});
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atena ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffd1ff,#c2e9fb);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    width:600px;
+    max-width:90%;
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.emoji{
+    font-size:90px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-12px);}
+}
+
+h1{
+    font-size:52px;
+    color:#ff2d6f;
+    margin:15px 0;
+}
+
+p{
+    font-size:30px;
+    color:#333;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.buttons{
+    position:relative;
+    height:180px;
+}
+
+button{
+    border:none;
+    padding:15px 35px;
+    font-size:22px;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+#yes{
+    background:#ff2d6f;
+    color:white;
+    box-shadow:0 0 20px rgba(255,45,111,.5);
+}
+
+#no{
+    background:#555;
+    color:white;
+    position:absolute;
+    left:300px;
+}
+
+.final{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background:rgba(255,255,255,.95);
+    z-index:1000;
+}
+
+.final h2{
+    font-size:70px;
+    color:#ff2d6f;
+    margin-bottom:20px;
+}
+
+.final p{
+    font-size:42px;
+    color:#ff2d6f;
+    font-weight:bold;
+}
+
+.heart{
+    position:fixed;
+    font-size:30px;
+    pointer-events:none;
+    animation:fly 5s linear forwards;
+}
+
+@keyframes fly{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(720deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="emoji">🥺❤️</div>
+
+<h1>Atena ❤️</h1>
+
+<p>
+Do You Love Me? 🥺💕
+</p>
+
+<div class="buttons">
+    <button id="yes">YES ❤️</button>
+    <button id="no">NO 🙈</button>
+</div>
+
+</div>
+
+<div class="final" id="final">
+
+<h2>❤️ ATENA ❤️</h2>
+
+<p>
+I Love You Too ❤️🥰
+</p>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+let scale = 1;
+
+function moveNo(){
+
+    const x = Math.random() * (window.innerWidth - 150);
+    const y = Math.random() * (window.innerHeight - 80);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    scale += 0.15;
+    yesBtn.style.transform = `scale(${scale})`;
+}
+
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("click", moveNo);
+
+yesBtn.addEventListener("click", ()=>{
+
+    document.title = "Atena ❤️";
+
+    document.querySelector(".card").style.display="none";
+    document.getElementById("final").style.display="flex";
+
+    setInterval(()=>{
+
+        const heart=document.createElement("div");
+
+        heart.className="heart";
+
+        const emojis=["❤️","💖","💕","💘","💝","🥰"];
+
+        heart.innerHTML=
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+        heart.style.left=Math.random()*window.innerWidth+"px";
+        heart.style.bottom="-50px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },5000);
+
+    },80);
+
+});
+
+</script>
+
+</body>
+</html>
